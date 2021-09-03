@@ -4,10 +4,13 @@
   top: 0;
   right: 0;
   left: 0;
+  @media ($md) {
+    background-color: rgba($color-gray-dark, 0.25);
+    box-shadow: 0 0 10px $color-light;
+  }
   &__container {
     display: grid;
     align-items: center;
-
     @extend %container;
     gap: $gap;
     grid-template-columns: auto 1fr;
