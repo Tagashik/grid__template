@@ -1,0 +1,128 @@
+.posts-container {
+  @extend %container;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.posts-grid {
+  display: grid;
+  padding-bottom: $gap;
+  gap: $gap;
+  grid-template-areas: "p1 p1 p2 p3" "p4 p5 p6 p6";
+  grid-template-columns: repeat(4, 1fr);
+}
+.post-item {
+  transition: background-color 0.5s;
+  background-color: #f2f2f2;
+
+  &__link {
+    display: grid;
+    overflow: hidden;
+    height: 100%;
+    grid-template-rows: 300px 1fr;
+  }
+  &__image {
+    display: flex;
+    overflow: hidden;
+    align-content: center;
+    justify-content: center;
+    background-color: $color-primary;
+  }
+  &__caption {
+    display: grid;
+    align-content: center;
+    padding: $gap;
+    text-align: center;
+  }
+  &__caption p {
+    font-size: $font-size;
+  }
+}
+h3 {
+  color: $color-gray;
+  font-size: 1.125rem;
+}
+img {
+  border-style: none;
+}
+.post-item__image img {
+  transition: transform 2s;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+.post-item:hover {
+  background-color: #d8d8d8;
+}
+.post-item:hover .post-item__image img {
+  transition: transform 2s;
+  transform: scale(1.1);
+}
+.post-item:hover h3 {
+  color: $color-primary;
+}
+.post-item:hover p {
+  color: $color-primary;
+}
+.posts-actions {
+  display: flex;
+  justify-content: center;
+}
+.post-item:hover {
+  background-color: rgba(216, 216, 216, 1);
+}
+.post-item:nth-of-type(1) {
+  grid-area: p1;
+}
+.post-item:nth-of-type(2) {
+  grid-area: p2;
+}
+.post-item:nth-of-type(3) {
+  grid-area: p3;
+}
+.post-item:nth-of-type(4) {
+  grid-area: p4;
+}
+.post-item:nth-of-type(5) {
+  grid-area: p5;
+}
+.post-item:nth-of-type(6) {
+  grid-area: p6;
+}
+@media (min-width: $lg) {
+  .posts-grid {
+    grid-template-areas:
+      "p1 p1 p2 p3"
+      "p4 p5 p6 p6";
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 991.8px) and (min-width: $md) {
+  .posts {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  .posts-grid {
+    grid-template-areas:
+      "p1 p1 p2"
+      "p3 p4 p4"
+      "p5 p5 p6";
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 767.8px) and (min-width: $sm) {
+  .posts {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  .posts-grid {
+    grid-template-areas: "p1 p2" "p3 p4" "p5 p6";
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 575.8px) {
+  .posts-grid {
+    grid-template-areas: "p1" "p2" "p3" "p4" "p5" "p6";
+    grid-template-columns: 1fr;
+  }
+}
