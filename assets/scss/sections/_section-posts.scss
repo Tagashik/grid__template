@@ -1,23 +1,29 @@
 .posts-container {
-  @extend %container;
   margin-top: 100px;
   margin-bottom: 100px;
+
+  @extend %container;
 }
 .posts-grid {
   display: grid;
+
   padding-bottom: $gap;
+
   gap: $gap;
   grid-template-areas: "p1 p1 p2 p3" "p4 p5 p6 p6";
   grid-template-columns: repeat(4, 1fr);
 }
 .post-item {
   transition: background-color 0.5s;
+
   background-color: #f2f2f2;
 
   &__link {
     display: grid;
     overflow: hidden;
+
     height: 100%;
+
     grid-template-rows: 300px 1fr;
   }
   &__image {
@@ -25,12 +31,15 @@
     overflow: hidden;
     align-content: center;
     justify-content: center;
+
     background-color: $color-primary;
   }
   &__caption {
     display: grid;
     align-content: center;
+
     padding: $gap;
+
     text-align: center;
   }
   &__caption p {
@@ -39,16 +48,19 @@
 }
 h3 {
   color: $color-gray;
+
   font-size: 1.125rem;
 }
 img {
   border-style: none;
 }
 .post-item__image img {
-  transition: transform 2s;
   width: 100%;
-  background-size: cover;
+
+  transition: transform 2s;
+
   background-position: center;
+  background-size: cover;
 }
 .post-item:hover {
   background-color: #d8d8d8;
@@ -90,9 +102,8 @@ img {
 }
 @media (min-width: $lg) {
   .posts-grid {
-    grid-template-areas:
-      "p1 p1 p2 p3"
-      "p4 p5 p6 p6";
+    grid-template-areas: "p1 p1 p2 p3"
+    "p4 p5 p6 p6";
     grid-template-columns: repeat(4, 1fr);
   }
 }
@@ -102,10 +113,9 @@ img {
     padding-bottom: 80px;
   }
   .posts-grid {
-    grid-template-areas:
-      "p1 p1 p2"
-      "p3 p4 p4"
-      "p5 p5 p6";
+    grid-template-areas: "p1 p1 p2"
+    "p3 p4 p4"
+    "p5 p5 p6";
     grid-template-columns: repeat(3, 1fr);
   }
 }

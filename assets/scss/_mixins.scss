@@ -1,6 +1,7 @@
 @mixin unlist($p: 0, $m: 0) {
   margin: $m;
   padding: $p;
+
   list-style: none;
 }
 @mixin abs-position($t: 0, $b: 0, $l: 0, $r: 0) {
@@ -13,6 +14,7 @@
 @mixin text-shortener {
   display: block;
   overflow: hidden;
+
   white-space: nowrap;
   text-overflow: ellipsis;
   text-overflow: ellipsis;
