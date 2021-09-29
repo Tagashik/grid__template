@@ -7,7 +7,14 @@
   justify-items: end;
 
   &__btn {
-    display: none;
+    // display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  
+    width: 50px;
+  
+    transform: translate(-50%, -50%);
     @media (max-width: 767.8px) {
       display: block;
     }
@@ -59,4 +66,28 @@
   .header-navbar__item {
     margin: 20px 10px;
   }
+}
+
+.header-navbar__btn:before,
+.header-navbar__btn:after,
+.header-navbar__btn div {
+  display: block;
+
+  height: 3px;
+  margin: 7px 0;
+
+  content: "";
+  transition: 0.5s;
+
+  border-radius: 3px;
+  background: #ffffff;
+}
+.header-navbar__btn:hover:before {
+  transform: translateY(12px) rotate(135deg);
+}
+.header-navbar__btn:hover:after {
+  transform: translateY(-12px) rotate(-135deg);
+}
+.header-navbar__btn:hover div {
+  transform: scale(0);
 }

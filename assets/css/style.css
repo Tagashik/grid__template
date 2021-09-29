@@ -492,7 +492,13 @@ a {
 }
 
 .header-navbar__btn {
-  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .header-navbar__list {
@@ -520,6 +526,38 @@ a {
 
 .header-navbar__link:hover {
   color: #d66926;
+}
+
+.header-navbar__btn:before,
+.header-navbar__btn:after,
+.header-navbar__btn div {
+  display: block;
+  height: 3px;
+  margin: 7px 0;
+  content: "";
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  border-radius: 3px;
+  background: #ffffff;
+}
+
+.header-navbar__btn:hover:before {
+  -webkit-transform: translateY(12px) rotate(135deg);
+      -ms-transform: translateY(12px) rotate(135deg);
+          transform: translateY(12px) rotate(135deg);
+}
+
+.header-navbar__btn:hover:after {
+  -webkit-transform: translateY(-12px) rotate(-135deg);
+      -ms-transform: translateY(-12px) rotate(-135deg);
+          transform: translateY(-12px) rotate(-135deg);
+}
+
+.header-navbar__btn:hover div {
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
 }
 
 .header-content {
@@ -1245,5 +1283,13 @@ img {
   .posts-grid {
     grid-template-areas: "p1" "p2" "p3" "p4" "p5" "p6";
     grid-template-columns: 1fr;
+  }
+}
+
+@media (768px) {
+  .header-menu {
+    background-color: rgba(68, 89, 110, 0.25);
+    -webkit-box-shadow: 0 0 10px #ffffff;
+            box-shadow: 0 0 10px #ffffff;
   }
 }
